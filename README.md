@@ -1,159 +1,154 @@
-# AIROCX - Animation IP Website with Admin Dashboard
+# AIROCX 🚀
 
-A full-stack animation studio website with a CMS-style admin dashboard for managing characters, showcase content, and merchandise.
+AIROCX is a scalable AI-powered application designed to deliver intelligent automation and insights. This project is built with a modern Python stack and is structured for easy deployment and extensibility.
 
-## Features
+---
 
-### Main Website
-- Hero section with animated SVG character and glow effects
-- Interactive character profiles with modal details
-- Parallax character carousel
-- Content showcase with filters (All/Videos/Images/BTS)
-- YouTube video lightbox integration
-- Merch store with cart functionality
-- Corporate partnerships section
-- Contact form
-- Smooth scroll reveal animations
-- Fully responsive design
-- Dynamic content loaded from MongoDB
+## ✨ Features
 
-### Admin Dashboard
-- Password-protected access
-- Three management tabs:
-  - **Characters**: Add/Edit/Delete characters
-  - **Showcase**: Manage videos and images
-  - **Merch**: Manage store products
-- Visual forms for editing
-- Direct SVG code editing
-- Image URL swapping capability
-- Live data updates
+* AI-driven processing
+* Modular and scalable architecture
+* Easy deployment (Render / Docker ready)
+* Clean and maintainable codebase
 
-## Tech Stack
+---
 
-### Backend
-- **Framework**: FastAPI
-- **Database**: MongoDB
-- **Authentication**: JWT tokens
-- **Password Hashing**: bcrypt
+## 🛠️ Tech Stack
 
-### Frontend
-- **Framework**: React 18
-- **Routing**: React Router v6
-- **Styling**: Custom CSS
-- **Fonts**: Space Grotesk, Playfair Display
+* Python
+* FastAPI (if applicable)
+* Uvicorn / Gunicorn
+* Poetry (dependency management)
 
-## Project Structure
+---
 
-```
-├── backend/
-│   ├── server.py          # FastAPI application with all routes
-│   ├── requirements.txt   # Python dependencies
-│   └── .env               # Environment variables (not tracked)
-├── frontend/
-│   ├── public/
-│   │   └── index.html     # HTML template
-│   ├── src/
-│   │   ├── index.js       # React entry point
-│   │   ├── App.js         # Main router
-│   │   ├── App.css        # All website styles
-│   │   └── components/
-│   │       ├── MainWebsite.js      # Public website
-│   │       ├── AdminLogin.js       # Admin login page
-│   │       ├── AdminDashboard.js   # Dashboard container
-│   │       ├── CharactersTab.js    # Characters management
-│   │       ├── ShowcaseTab.js      # Showcase management
-│   │       └── MerchTab.js         # Merch management
-│   └── package.json       # Node dependencies
-└── memory/
-    └── *.md               # Documentation guides
+## 📦 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Yofacto/AIROCX.git
+cd AIROCX
 ```
 
-## Getting Started
+### 2. Install dependencies
 
-### Prerequisites
-- Node.js (v16+)
-- Python (v3.9+)
-- MongoDB
+#### Using Poetry:
 
-### Backend Setup
+```bash
+poetry install
+```
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
+#### Or using pip:
 
-2. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+---
 
-4. Create a `.env` file with the following variables:
-   ```
-   MONGO_URL=mongodb://localhost:27017/airocx
-   ADMIN_PASSWORD=<your-secure-password>
-   JWT_SECRET=<your-secret-key>
-   ```
+## ▶️ Running the Project
 
-5. Start the server:
-   ```bash
-   uvicorn server:app --reload --port 8001
-   ```
+```bash
+poetry run python main.py
+```
 
-### Frontend Setup
+*or*
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
+```bash
+uvicorn main:app --reload
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+---
 
-3. Start the development server:
-   ```bash
-   npm start
-   ```
+## 🌐 Deployment
 
-## API Endpoints
+### Render Setup
 
-### Public
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/health` | Health check |
-| GET | `/api/characters` | Get all characters |
-| GET | `/api/showcase` | Get all showcase items |
-| GET | `/api/merch` | Get all merch items |
+* **Build Command:**
 
-### Admin (requires JWT token)
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/login` | Login with password |
-| POST | `/api/characters` | Create character |
-| PUT | `/api/characters/{id}` | Update character |
-| DELETE | `/api/characters/{id}` | Delete character |
-| POST | `/api/showcase` | Create showcase item |
-| PUT | `/api/showcase/{id}` | Update showcase item |
-| DELETE | `/api/showcase/{id}` | Delete showcase item |
-| POST | `/api/merch` | Create merch item |
-| PUT | `/api/merch/{id}` | Update merch item |
-| DELETE | `/api/merch/{id}` | Delete merch item |
+  ```bash
+  poetry install
+  ```
 
-## Access Points
+* **Start Command:**
 
-| Service | URL |
-|---------|-----|
-| Main Website | `http://localhost:3000/` |
-| Admin Dashboard | `http://localhost:3000/admin` |
-| API | `http://localhost:8001/api/` |
+  ```bash
+  poetry run python main.py
+  ```
 
-## License
+---
 
-This project is proprietary. All rights reserved.
+## 🔐 Environment Variables
+
+Create a `.env` file in the root directory and add:
+
+```env
+API_KEY=your_api_key_here
+DATABASE_URL=your_database_url_here
+SECRET_KEY=your_secret_here
+```
+
+⚠️ **Never commit your `.env` file or secrets to GitHub.**
+
+---
+
+## 🚫 Removed Sensitive Data
+
+The following have been intentionally removed for security:
+
+* API keys / tokens
+* Private URLs
+* Emails / credentials
+* Internal endpoints
+* Hardcoded secrets
+
+---
+
+## 📁 Project Structure
+
+```
+AIROCX/
+│── app/
+│── main.py
+│── pyproject.toml
+│── requirements.txt (optional)
+│── .env (not committed)
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## ⚠️ Security Best Practices
+
+* Use environment variables for all secrets
+* Rotate keys if they were ever exposed
+* Enable `.gitignore` for:
+
+  ```
+  .env
+  __pycache__/
+  *.log
+  ```
+
+---
+
+## 📬 Contact
+
+For queries or collaboration, open an issue in the repository.
+
+---
